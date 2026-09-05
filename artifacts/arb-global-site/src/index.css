@@ -297,6 +297,53 @@
 .whatsapp-btn:hover { background: rgba(93,221,155,.15); }
 .modal-disclaimer { padding: 0 29px 24px; color: #5c7783; font: 9px var(--app-font-mono); }
 
+/* Brand palette sampled from the supplied ARB Global artwork:
+   midnight navy, holographic violet, electric blue, and soft lavender. */
+:root {
+  --brand-ink: #08091b;
+  --brand-panel: #0d0d27;
+  --brand-violet: #c88cff;
+  --brand-purple: #9e4cff;
+  --brand-blue: #62c8ff;
+  --brand-lavender: #eee9ff;
+}
+html, body, .site-shell { background: var(--brand-ink); }
+.site-shell { color: var(--brand-lavender); }
+.gradient-text { background: linear-gradient(105deg, #f4f1ff 12%, var(--brand-violet) 53%, var(--brand-blue) 88%); -webkit-background-clip: text; background-clip: text; }
+.gold-text { color: var(--brand-violet); }
+.eyebrow::before { background: var(--brand-blue); box-shadow: 0 0 12px rgba(98,200,255,.75); }
+.brand-mark { object-fit: cover; object-position: center; border-color: var(--brand-blue); background: var(--brand-ink); box-shadow: inset 0 0 16px rgba(98,200,255,.18), 0 0 20px rgba(158,76,255,.2); }
+.nav-links button:hover { color: var(--brand-blue); }
+.nav-cta:hover { background: var(--brand-blue); color: var(--brand-ink); }
+.menu-button { border-color: rgba(98,200,255,.35); color: var(--brand-blue); }
+.primary-btn { border-color: var(--brand-blue); background: var(--brand-blue); color: var(--brand-ink); box-shadow: 0 0 28px rgba(98,200,255,.12); }
+.secondary-btn:hover { border-color: rgba(200,140,255,.7); color: var(--brand-violet); }
+.legend-dot { background: var(--brand-blue); }
+.legend-dot.gold { background: var(--brand-violet); }
+.hero-bottomline { background: linear-gradient(90deg, transparent, rgba(98,200,255,.36), transparent); }
+.service-card:hover { border-color: rgba(98,200,255,.48); }
+.service-icon { border-color: rgba(98,200,255,.36); color: var(--brand-blue); }
+.service-card:nth-child(2) .service-icon, .service-card:nth-child(5) .service-icon { color: var(--brand-violet); border-color: rgba(200,140,255,.35); }
+.signal-list svg, .infrastructure-note svg { color: var(--brand-violet); }
+.system-core { border-color: var(--brand-blue); color: var(--brand-blue); box-shadow: 0 0 38px rgba(98,200,255,.2); }
+.system-label::before { background: var(--brand-violet); box-shadow: 0 0 9px var(--brand-violet); }
+.rate-card-head strong, .plans-switch b, .plan-ribbon { color: var(--brand-violet); }
+.rate-row > strong, .social-rail a { color: var(--brand-blue); }
+.plan-card:hover { border-color: rgba(98,200,255,.55); }
+.plan-card.featured { border-color: rgba(200,140,255,.45); background: linear-gradient(150deg, rgba(91,47,128,.28), rgba(5,13,24,.92)); }
+.plan-cta { color: #c9f0ff; background: rgba(98,200,255,.07); border-color: rgba(98,200,255,.27); }
+.plan-cta:hover { background: var(--brand-blue); color: var(--brand-ink); }
+.plan-card.featured .plan-cta { color: #100b1d; background: var(--brand-violet); border-color: var(--brand-violet); }
+.quote-mark, .social-rail a:hover { color: var(--brand-violet); }
+.response-card { border-color: rgba(98,200,255,.25); background: linear-gradient(145deg, rgba(98,200,255,.11), rgba(5,16,28,.76)); }
+.contact-item svg { color: var(--brand-blue); }
+.modal-close:hover, .option-title svg { color: var(--brand-blue); }
+.payment-option.primary-option { border-color: rgba(98,200,255,.34); background: linear-gradient(150deg, rgba(98,200,255,.07), rgba(3,12,22,.7)); }
+.cashfree-btn { border-color: var(--brand-blue); background: var(--brand-blue); color: var(--brand-ink); }
+.cashfree-btn:hover { background: #a7ddff; }
+.method-labels svg { color: var(--brand-violet); }
+.bank-details { border-color: rgba(200,140,255,.35); background: rgba(200,140,255,.035); }
+
 @media (max-width: 900px) {
   .hero { min-height: 930px; align-items: flex-start; padding-top: 145px; }
   .hero-copy { width: 63%; }

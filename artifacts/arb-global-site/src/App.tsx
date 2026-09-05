@@ -154,13 +154,13 @@ function GlobeScene() {
       alpha: 0.23 + (index % 6) / 15,
     }));
     const dots = [
-      { lat: 51, lon: -0.1, color: '#00f2fe', label: 'LON' },
-      { lat: 19, lon: 73, color: '#ffd700', label: 'BOM' },
-      { lat: 35, lon: 139, color: '#00f2fe', label: 'TYO' },
-      { lat: 40, lon: -74, color: '#ffd700', label: 'NYC' },
-      { lat: -33, lon: 151, color: '#00f2fe', label: 'SYD' },
-      { lat: 1, lon: 103, color: '#00f2fe', label: 'SIN' },
-      { lat: 25, lon: 55, color: '#ffd700', label: 'DXB' },
+      { lat: 51, lon: -0.1, color: '#62c8ff', label: 'LON' },
+      { lat: 19, lon: 73, color: '#c88cff', label: 'BOM' },
+      { lat: 35, lon: 139, color: '#62c8ff', label: 'TYO' },
+      { lat: 40, lon: -74, color: '#c88cff', label: 'NYC' },
+      { lat: -33, lon: 151, color: '#62c8ff', label: 'SYD' },
+      { lat: 1, lon: 103, color: '#62c8ff', label: 'SIN' },
+      { lat: 25, lon: 55, color: '#c88cff', label: 'DXB' },
     ];
     const continents = [
       [[72, -140], [60, -128], [50, -124], [38, -117], [26, -105], [18, -96], [28, -83], [42, -76], [54, -82], [65, -95]],
@@ -230,7 +230,7 @@ function GlobeScene() {
       );
       if (moving.z > -0.05) {
         ctx.beginPath();
-        ctx.fillStyle = routeIndex % 2 === 0 ? '#00f2fe' : '#ffd700';
+        ctx.fillStyle = routeIndex % 2 === 0 ? '#62c8ff' : '#c88cff';
         ctx.shadowColor = ctx.fillStyle;
         ctx.shadowBlur = 10;
         ctx.arc(moving.x, moving.y, 2.1, 0, Math.PI * 2);
@@ -317,7 +317,7 @@ function GlobeScene() {
         ctx.fill();
         ctx.shadowBlur = 0;
         ctx.beginPath();
-        ctx.strokeStyle = dot.color === '#ffd700' ? 'rgba(255,215,0,.28)' : 'rgba(0,242,254,.26)';
+        ctx.strokeStyle = dot.color === '#c88cff' ? 'rgba(200,140,255,.28)' : 'rgba(98,200,255,.26)';
         ctx.arc(point.x, point.y, 8, 0, Math.PI * 2);
         ctx.stroke();
       });
@@ -781,7 +781,7 @@ function Header({ onOpenMenu, menuOpen }: { onOpenMenu: () => void; menuOpen: bo
     <header className="topbar">
       <div className="container-x" style={{ display: 'flex', alignItems: 'center', width: 'min(1180px, calc(100% - 40px))' }}>
         <button className="brand-lockup" onClick={() => navigate('top')} aria-label="ARB Global home" data-testid="button-brand-home">
-          <span className="brand-mark">A</span>
+          <img className="brand-mark" src="/brand/arb-global-symbol.jpg" alt="" />
           <span><span className="brand-name">ARB GLOBAL</span><span className="brand-sub">AI &amp; IT SERVICES</span></span>
         </button>
         <nav className="nav-links" aria-label="Main navigation">
@@ -848,7 +848,7 @@ function Home() {
                 return <article className="service-card" key={service.number}><span className="service-number">{service.number}</span><div className="service-icon"><Icon size={21} /></div><span className="service-kicker">{service.accent}</span><h3>{service.title}</h3><p>{service.description}</p></article>;
               })}
             </div>
-            <div className="service-ticker"><div className="ticker-panel"><span>OPERATING PRINCIPLE / 001</span><strong>Build once. Connect everything.</strong></div><div className="ticker-panel"><span>GLOBAL DELIVERY / NOW</span><strong style={{ color: '#00f2fe' }}>AI, cloud, fintech, and software in one motion <ArrowUpRight size={16} style={{ verticalAlign: 'middle', marginLeft: 6 }} /></strong></div></div>
+            <div className="service-ticker"><div className="ticker-panel"><span>OPERATING PRINCIPLE / 001</span><strong>Build once. Connect everything.</strong></div><div className="ticker-panel"><span>GLOBAL DELIVERY / NOW</span><strong style={{ color: '#62c8ff' }}>AI, cloud, fintech, and software in one motion <ArrowUpRight size={16} style={{ verticalAlign: 'middle', marginLeft: 6 }} /></strong></div></div>
           </div>
         </section>
 
@@ -888,7 +888,7 @@ function Home() {
           <div className="container-x">
             <div className="section-head"><div><span className="eyebrow">OFFICIAL 15-TIER MATRIX / 06</span><h2 id="plans-heading" className="section-title">Choose the<br /><span className="gold-text">right altitude.</span></h2></div><p className="section-note">The official ARB Global structure runs from ₹20,000 to ₹6,00,000. A hard 50% advance starts every project; the remaining 50% is due at UAT before final deployment.</p></div>
             <div className="plan-grid">{plans.map((plan) => <article className={`plan-card${plan.featured ? ' featured' : ''}`} key={plan.id} data-testid={`card-plan-${plan.id}`}><span className="plan-code">ARB / {plan.id}</span>{plan.featured && <span className="plan-ribbon">Most selected</span>}<h3>{plan.name}</h3><p>{plan.description}</p><div className="plan-price">{formatINR(plan.price)} <span>approx. {formatUSD(plan.price)}</span></div><button className="plan-cta" onClick={() => openPlan(plan)} data-testid={`button-book-plan-${plan.id}`}>Book with 50% Advance <ChevronRight size={14} /></button></article>)}</div>
-            <div className="pricing-foot"><span><ShieldCheck size={13} style={{ verticalAlign: 'middle', marginRight: 6, color: '#00f2fe' }} /> Hosting and domain are billed annually or bundled from Plans 8–15.</span><strong>15 official ways to start.</strong></div>
+            <div className="pricing-foot"><span><ShieldCheck size={13} style={{ verticalAlign: 'middle', marginRight: 6, color: '#62c8ff' }} /> Hosting and domain are billed annually or bundled from Plans 8–15.</span><strong>15 official ways to start.</strong></div>
           </div>
         </section>
 
