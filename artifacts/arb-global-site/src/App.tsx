@@ -781,8 +781,7 @@ function Header({ onOpenMenu, menuOpen }: { onOpenMenu: () => void; menuOpen: bo
     <header className="topbar">
       <div className="container-x" style={{ display: 'flex', alignItems: 'center', width: 'min(1180px, calc(100% - 40px))' }}>
         <button className="brand-lockup" onClick={() => navigate('top')} aria-label="ARB Global home" data-testid="button-brand-home">
-          <img className="brand-mark" src="/brand/arb-global-symbol.jpg" alt="" />
-          <span><span className="brand-name">ARB GLOBAL</span><span className="brand-sub">AI &amp; IT SERVICES</span></span>
+          <img className="brand-mark" src="/brand/arb-global-logo.jpg" alt="ARB Global AI & IT Services" />
         </button>
         <nav className="nav-links" aria-label="Main navigation">
           <button onClick={() => navigate('capabilities')} data-testid="link-capabilities">Services</button>
