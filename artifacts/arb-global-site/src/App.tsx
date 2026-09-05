@@ -48,21 +48,81 @@ type Plan = {
 };
 
 const plans: Plan[] = [
-  { id: '01', name: 'Signal Start', description: 'A focused first move into applied AI.', price: 49999 },
-  { id: '02', name: 'Cloud Lift', description: 'Modernize one critical business workflow.', price: 89999 },
-  { id: '03', name: 'AI Desk', description: 'A private intelligence layer for your team.', price: 129999 },
-  { id: '04', name: 'Ops Pilot', description: 'Automate the work that slows growth.', price: 175000 },
-  { id: '05', name: 'Data Current', description: 'Turn fragmented data into decisions.', price: 225000 },
-  { id: '06', name: 'Growth Engine', description: 'Intelligent systems built for momentum.', price: 299999, featured: true },
-  { id: '07', name: 'Vision Stack', description: 'Computer vision for real-world operations.', price: 375000 },
-  { id: '08', name: 'Digital Twin', description: 'Model your next operating advantage.', price: 450000 },
-  { id: '09', name: 'Scale Grid', description: 'Cloud architecture for the next chapter.', price: 525000 },
-  { id: '10', name: 'Command Centre', description: 'A connected view of the whole business.', price: 650000 },
-  { id: '11', name: 'Enterprise AI', description: 'Responsible AI across your organisation.', price: 825000 },
-  { id: '12', name: 'Autonomy Lab', description: 'Agents that handle complexity with care.', price: 999999 },
-  { id: '13', name: 'Global Fabric', description: 'Systems that move with your markets.', price: 1250000 },
-  { id: '14', name: 'Boardroom Build', description: 'A high-trust transformation programme.', price: 1650000 },
-  { id: '15', name: 'North Star', description: 'The full ARB partnership for scale.', price: 2200000 },
+  { id: '01', name: 'Starter Lite', description: 'A focused launchpad for a fast, credible web presence.', price: 20000 },
+  { id: '02', name: 'Essential Web', description: 'A polished business website built for clarity and conversion.', price: 50000 },
+  { id: '03', name: 'Professional Business', description: 'A complete business platform with stronger workflows and growth foundations.', price: 80000 },
+  { id: '04', name: 'Enterprise Standard', description: 'A resilient enterprise site with a more capable operating layer.', price: 110000 },
+  { id: '05', name: 'Advanced Corporate', description: 'Corporate-grade experience, content architecture, and integrations.', price: 140000 },
+  { id: '06', name: 'AI Automated Portal', description: 'AI-assisted workflows, smart replies, and a client-facing portal.', price: 170000 },
+  { id: '07', name: 'E-Commerce Engine', description: 'A commerce system engineered for products, payments, and scale.', price: 200000 },
+  { id: '08', name: 'SaaS Platform Starter', description: 'The first product-grade SaaS foundation with secure user flows.', price: 230000 },
+  { id: '09', name: 'SaaS Platform Pro', description: 'A deeper SaaS build with richer workflows, data, and automation.', price: 260000 },
+  { id: '10', name: 'Global Enterprise Hub', description: 'A multi-market hub for global teams, clients, and operations.', price: 290000 },
+  { id: '11', name: 'AI Voice & Agent Portal', description: 'Conversational AI, voice agents, and intelligent client journeys.', price: 320000 },
+  { id: '12', name: 'Omnichannel AI Suite', description: 'Chat, WhatsApp, voice, support, and knowledge flows in one system.', price: 350000 },
+  { id: '13', name: 'Custom FinTech Engine', description: 'Payment, currency, invoicing, and financial workflows built around your business.', price: 380000 },
+  { id: '14', name: 'Ultra Enterprise Ecosystem', description: 'A connected enterprise experience across teams, portals, and infrastructure.', price: 410000 },
+  { id: '15', name: 'Bespoke Custom AI Empire', description: 'Bespoke source code, custom AI models, dedicated cloud infrastructure, and 1-year SLA support.', price: 600000, featured: true },
+];
+
+const servicePillars = [
+  {
+    number: '01 / 05',
+    icon: BrainCircuit,
+    title: 'Artificial intelligence & automation',
+    description: 'Custom LLM integrations, generative AI, machine learning pipelines, predictive analytics, and AI voice and chatbot ecosystems.',
+    accent: 'AI DIVISION',
+  },
+  {
+    number: '02 / 05',
+    icon: Cloud,
+    title: 'Enterprise web & software engineering',
+    description: 'High-performance React and Next.js applications, Node.js services, microservices, APIs, custom ERP, and CRM development.',
+    accent: 'IT DIVISION',
+  },
+  {
+    number: '03 / 05',
+    icon: LockKeyhole,
+    title: 'Cloud & cyber security',
+    description: 'AWS and GCP migrations, DevOps automation, CI/CD, zero-trust architecture, penetration testing, and security audits.',
+    accent: 'CLOUD / SECURITY',
+  },
+  {
+    number: '04 / 05',
+    icon: CircleDollarSign,
+    title: 'Global fintech & growth systems',
+    description: 'Multi-currency pricing, Cashfree and ACH flows, GST/VAT invoicing, geo-IP personalization, SEO, estimators, and meeting booking.',
+    accent: 'GLOBAL COMMERCE',
+  },
+  {
+    number: '05 / 05',
+    icon: Network,
+    title: 'Enterprise operations & trust',
+    description: 'AI proposals and e-sign contracts, client portals, help-desk tickets, affiliate referrals, uptime monitoring, and compliance surfaces.',
+    accent: 'OPERATIONS',
+  },
+];
+
+const domainRates = [
+  ['.COM', 'Global commercial standard', '₹1,199 / year', 'WHOIS privacy + DNSSEC'],
+  ['.AI', 'Artificial intelligence & tech startups', '₹6,999 / year', 'Premium tech identity + WHOIS shield'],
+  ['.IN / .CO.IN', 'India national & regional business', '₹699 / year', 'Local SEO advantage + free DNS management'],
+  ['.ORG / .NET', 'Organizations, networks & non-profits', '₹1,299 / year', 'Domain theft protection + email forwarding'],
+  ['.IO / .TECH', 'SaaS, developers & high-tech portals', '₹3,499 / year', 'Full DNS control panel + Anycast routing'],
+];
+
+const hostingRates = [
+  ['Cloud SSD Lite', '2 vCPU · 4GB RAM · 50GB NVMe', '₹4,999 / year', 'Starter websites · Plans 1–3'],
+  ['Cloud Business Pro', '4 vCPU · 8GB RAM · 120GB NVMe · daily backups', '₹11,999 / year', 'E-commerce · Plans 4–7'],
+  ['Dedicated AI Node', '8 vCPU · 16GB RAM · 250GB NVMe · GPU acceleration', '₹29,999 / year', 'SaaS + AI voice · Plans 8–12'],
+  ['Enterprise Cluster', '16 vCPU · 32GB RAM · 1TB NVMe · load balancer + SLA', '₹69,999 / year', 'Fintech + AI empires · Plans 13–15'],
+];
+
+const securityRates = [
+  ['Enterprise Wildcard SSL', '256-bit encryption for the main domain and unlimited subdomains', '₹2,499 / year'],
+  ['Google Workspace / M365 Email', 'Professional custom-domain email', '₹2,880 / user / year'],
+  ['Cloudflare Enterprise WAF', 'DDoS protection, edge CDN, and global rate limiting', '₹5,999 / year'],
+  ['Automated Offsite Cloud Backup', 'Daily snapshots with a 30-day recovery point', '₹3,500 / year'],
 ];
 
 const formatINR = (amount: number) =>
@@ -695,12 +755,14 @@ function PaymentModal({ plan, onClose }: { plan: Plan; onClose: () => void }) {
           </div>
           <div className="payment-option">
             <div className="option-title"><Building2 size={18} /> ACH bank transfer</div>
-            <p className="option-description">Prefer a direct transfer? Use these placeholder details and share your confirmation.</p>
+            <p className="option-description">Prefer a direct transfer? Use the bank details from your final proposal and share your confirmation.</p>
             <div className="bank-details" aria-label="Bank transfer details">
-              <div><b>Account name</b> ARB Global AI &amp; IT Services</div>
-              <div><b>Bank</b> Partner bank — details on invoice</div>
-              <div><b>Reference</b> {plan.name.toUpperCase().replaceAll(' ', '-')}</div>
-              <div><b>Amount</b> {formatINR(advance)} / 50% advance</div>
+              <div><b>Bank</b> [Your Bank Name]</div>
+              <div><b>Account name</b> ARB Global IT Services</div>
+              <div><b>ACH routing number</b> [Put your number]</div>
+              <div><b>Account number</b> [Put your number]</div>
+              <div><b>SWIFT</b> [Code]</div>
+              <div><b>Reference</b> {plan.name.toUpperCase().replaceAll(' ', '-')} · {formatINR(advance)}</div>
             </div>
             <a className="whatsapp-btn" href="https://wa.me/918127968129" target="_blank" rel="noreferrer" data-testid="link-transfer-whatsapp">
               <MessageCircle size={15} /> I Transferred - Send on WhatsApp
@@ -723,9 +785,9 @@ function Header({ onOpenMenu, menuOpen }: { onOpenMenu: () => void; menuOpen: bo
           <span><span className="brand-name">ARB GLOBAL</span><span className="brand-sub">AI &amp; IT SERVICES</span></span>
         </button>
         <nav className="nav-links" aria-label="Main navigation">
-          <button onClick={() => navigate('capabilities')} data-testid="link-capabilities">Capabilities</button>
-          <button onClick={() => navigate('signal')} data-testid="link-approach">Approach</button>
-          <button onClick={() => navigate('plans')} data-testid="link-plans">Investment</button>
+          <button onClick={() => navigate('capabilities')} data-testid="link-capabilities">Services</button>
+          <button onClick={() => navigate('portfolio')} data-testid="link-approach">Portfolio</button>
+          <button onClick={() => navigate('plans')} data-testid="link-plans">15 plans</button>
           <button onClick={() => navigate('contact')} data-testid="link-contact">Contact</button>
         </nav>
         <button className="nav-cta" onClick={() => navigate('plans')} data-testid="button-header-cta">Start a conversation <ArrowUpRight size={13} /></button>
@@ -747,7 +809,7 @@ function Home() {
       <Header onOpenMenu={() => setMenuOpen((current) => !current)} menuOpen={menuOpen} />
       {menuOpen && (
         <div style={{ position: 'fixed', zIndex: 35, top: 66, left: 0, right: 0, padding: 22, borderBottom: '1px solid rgba(133,167,185,.15)', background: 'rgba(2,6,23,.97)' }}>
-          {['capabilities', 'signal', 'plans', 'contact'].map((item) => (
+          {['capabilities', 'portfolio', 'infrastructure', 'plans', 'contact'].map((item) => (
             <button key={item} onClick={() => nav(item)} style={{ display: 'block', width: '100%', padding: '14px 0', textAlign: 'left', border: 0, borderBottom: '1px solid rgba(133,167,185,.11)', background: 'none', color: '#b4cbd2', font: '11px var(--app-font-mono)', textTransform: 'uppercase', letterSpacing: '.12em' }} data-testid={`mobile-link-${item}`}>{item}</button>
           ))}
         </div>
@@ -756,17 +818,17 @@ function Home() {
         <section className="hero grid-fade" aria-labelledby="hero-heading">
           <div className="container-x">
             <div className="hero-copy">
-              <span className="eyebrow">THE INTELLIGENCE ADVANTAGE / 01</span>
-              <h1 id="hero-heading" className="display"><span className="gradient-text">Move faster</span><br />with intelligence.</h1>
-              <p className="hero-lede">ARB Global builds the AI, cloud, and intelligent systems that turn ambitious businesses into faster, clearer, more resilient organisations.</p>
+              <span className="eyebrow">GLOBAL AI / ENTERPRISE IT / 01</span>
+              <h1 id="hero-heading" className="display"><span className="gradient-text">Scale with</span><br />intelligence.</h1>
+              <p className="hero-lede">Next-gen AI solutions and enterprise IT engineering for global business scale — from intelligent websites and SaaS platforms to cloud infrastructure, fintech, and autonomous agents.</p>
               <div className="hero-actions">
-                <button className="primary-btn" onClick={() => scrollToId('plans')} data-testid="button-hero-explore">Explore the partnership <ArrowRight size={15} /></button>
-                <button className="secondary-btn" onClick={() => scrollToId('capabilities')} data-testid="button-hero-capabilities">See our capabilities</button>
+                <button className="primary-btn" onClick={() => scrollToId('plans')} data-testid="button-hero-explore">View all 15 plans <ArrowRight size={15} /></button>
+                <button className="secondary-btn" onClick={() => scrollToId('capabilities')} data-testid="button-hero-capabilities">Explore services</button>
               </div>
               <div className="hero-proof">
-                <div><strong>24/7</strong>systems thinking</div>
-                <div><strong>14+</strong>markets connected</div>
-                <div><strong>60 sec</strong>response promise</div>
+                <div><strong>24/7</strong>AI &amp; support</div>
+                <div><strong>6</strong>global languages</div>
+                <div><strong>50%</strong>booking advance</div>
               </div>
             </div>
           </div>
@@ -777,47 +839,71 @@ function Home() {
         <section className="section services-section" id="capabilities" aria-labelledby="capabilities-heading">
           <div className="container-x">
             <div className="section-head">
-              <div><span className="eyebrow">CAPABILITIES / 02</span><h2 id="capabilities-heading" className="section-title">The system behind<br /><span className="gold-text">your next move.</span></h2></div>
-              <p className="section-note">We connect strategy to execution, pairing senior thinking with the technical muscle to ship what matters.</p>
+              <div><span className="eyebrow">SERVICES / 02</span><h2 id="capabilities-heading" className="section-title">One partner for<br /><span className="gold-text">the whole system.</span></h2></div>
+              <p className="section-note">From AI and custom software to cloud, security, fintech, and growth infrastructure, ARB Global brings the pieces together.</p>
             </div>
             <div className="service-grid">
-              <article className="service-card"><span className="service-number">01 / 05</span><div className="service-icon"><BrainCircuit size={21} /></div><h3>Applied AI &amp; automation</h3><p>From private copilots to autonomous workflows, we make AI useful inside the way your business already works.</p></article>
-              <article className="service-card"><span className="service-number">02 / 05</span><div className="service-icon"><Cloud size={21} /></div><h3>Cloud architecture</h3><p>Secure, observable foundations that scale with the decisions you make next.</p></article>
-              <article className="service-card"><span className="service-number">03 / 05</span><div className="service-icon"><Network size={21} /></div><h3>Intelligent systems</h3><p>Bring data, people, and systems into one operating picture.</p></article>
-              <article className="service-card"><span className="service-number">04 / 05</span><div className="service-icon"><Database size={21} /></div><h3>Data intelligence</h3><p>Find the signal in your data and put it where decisions happen.</p></article>
-              <article className="service-card"><span className="service-number">05 / 05</span><div className="service-icon"><LockKeyhole size={21} /></div><h3>Trust &amp; resilience</h3><p>Security, governance, and reliability built in — never bolted on.</p></article>
+              {servicePillars.map((service) => {
+                const Icon = service.icon;
+                return <article className="service-card" key={service.number}><span className="service-number">{service.number}</span><div className="service-icon"><Icon size={21} /></div><span className="service-kicker">{service.accent}</span><h3>{service.title}</h3><p>{service.description}</p></article>;
+              })}
             </div>
-            <div className="service-ticker"><div className="ticker-panel"><span>OPERATING PRINCIPLE / 001</span><strong>Clarity before complexity.</strong></div><div className="ticker-panel"><span>DELIVERY SIGNAL / NOW</span><strong style={{ color: '#00f2fe' }}>Systems ready for lift-off <ArrowUpRight size={16} style={{ verticalAlign: 'middle', marginLeft: 6 }} /></strong></div></div>
+            <div className="service-ticker"><div className="ticker-panel"><span>OPERATING PRINCIPLE / 001</span><strong>Build once. Connect everything.</strong></div><div className="ticker-panel"><span>GLOBAL DELIVERY / NOW</span><strong style={{ color: '#00f2fe' }}>AI, cloud, fintech, and software in one motion <ArrowUpRight size={16} style={{ verticalAlign: 'middle', marginLeft: 6 }} /></strong></div></div>
           </div>
         </section>
 
         <section className="section signal-section" id="signal" aria-labelledby="signal-heading">
           <div className="container-x signal-layout">
-            <div className="signal-copy"><span className="eyebrow">OUR APPROACH / 03</span><h2 id="signal-heading">No theatre.<br /><span className="gradient-text">Just signal.</span></h2><p>Good technology work changes what a business can see, decide, and deliver. We stay close to the outcome — and make every technical choice earn its place.</p><ul className="signal-list"><li><Check size={14} /> Senior operators, not layers of handoffs</li><li><Check size={14} /> Built around your reality, not a template</li><li><Check size={14} /> Measurable progress in weeks, not quarters</li></ul></div>
-            <div className="system-panel" aria-label="ARB connected systems diagram"><div className="system-core"><Activity size={25} /></div><span className="system-label a">INTELLIGENCE LAYER</span><span className="system-label b">YOUR OPERATING DATA</span><span className="system-label c">DECISION VELOCITY</span><div className="system-caption"><span>ARB / SYSTEM MAP</span><span>STATUS: NOMINAL</span></div></div>
+            <div className="signal-copy"><span className="eyebrow">ENTERPRISE LAYER / 03</span><h2 id="signal-heading">The work behind<br /><span className="gradient-text">the wow.</span></h2><p>ARB Global combines a high-end front end with the operational systems that make a business easier to buy from, work with, and trust.</p><ul className="signal-list"><li><Check size={14} /> AI proposal generator + digital e-sign contracts</li><li><Check size={14} /> Client portal, live milestones, invoices, and help desk</li><li><Check size={14} /> Affiliate referrals with 10–20% commission tracking</li><li><Check size={14} /> Live uptime, SSL, GDPR, and Cloudflare edge protection</li></ul></div>
+            <div className="system-panel" aria-label="ARB connected enterprise systems diagram"><div className="system-core"><Activity size={25} /></div><span className="system-label a">AUTONOMOUS AI</span><span className="system-label b">CLIENT PORTAL</span><span className="system-label c">GLOBAL FINTECH</span><div className="system-caption"><span>ARB / ENTERPRISE MAP</span><span>STATUS: 99.9% READY</span></div></div>
+          </div>
+        </section>
+
+        <section className="section portfolio-section" id="portfolio" aria-labelledby="portfolio-heading">
+          <div className="container-x">
+            <div className="section-head"><div><span className="eyebrow">PORTFOLIO / 04</span><h2 id="portfolio-heading" className="section-title">Built for the<br /><span className="gold-text">markets ahead.</span></h2></div><p className="section-note">From payment rails to AI voice agents, the portfolio is designed around the real work your customers and teams need to do.</p></div>
+            <div className="portfolio-grid">
+              <article className="portfolio-card"><span className="portfolio-kicker">FINTECH / GLOBAL COMMERCE</span><h3>Payment experiences without borders.</h3><p>Cashfree for India, ACH and direct wire for global clients, multi-currency pricing, and automated GST/VAT invoice flows.</p><div className="portfolio-tags"><span>Cashfree</span><span>ACH</span><span>Multi-currency</span></div></article>
+              <article className="portfolio-card"><span className="portfolio-kicker">AI / AUTONOMOUS AGENTS</span><h3>Systems that answer, qualify, and move.</h3><p>Multi-lingual smart chat, WhatsApp knowledge flows, outbound voice agents, and intelligent lead journeys for always-on conversion.</p><div className="portfolio-tags"><span>Chatbot</span><span>Voice AI</span><span>Hindi / English</span></div></article>
+              <article className="portfolio-card"><span className="portfolio-kicker">SAAS / CLIENT PORTALS</span><h3>Products people can see working.</h3><p>Secure dashboards, live project progress, code commits, support tickets, invoices, and product-grade SaaS foundations.</p><div className="portfolio-tags"><span>React</span><span>Next.js</span><span>Node.js</span></div></article>
+              <article className="portfolio-card"><span className="portfolio-kicker">CLOUD / TRUST / SEO</span><h3>Infrastructure that earns confidence.</h3><p>Cloud migrations, DevOps, zero-trust security, technical SEO, Cloudflare edge delivery, SSL, backups, and uptime visibility.</p><div className="portfolio-tags"><span>AWS / GCP</span><span>Cloudflare</span><span>99.9% uptime</span></div></article>
+            </div>
+            <div className="industries-row"><span>INDUSTRIES WE SERVE</span><b>FinTech</b><b>HealthTech</b><b>E-commerce</b><b>Logistics</b><b>Real Estate</b><b>SaaS</b></div>
+          </div>
+        </section>
+
+        <section className="section infrastructure-section" id="infrastructure" aria-labelledby="infrastructure-heading">
+          <div className="container-x">
+            <div className="section-head"><div><span className="eyebrow">INFRASTRUCTURE / 05</span><h2 id="infrastructure-heading" className="section-title">Clear pricing for<br /><span className="gradient-text">the foundations.</span></h2></div><p className="section-note">Domain, hosting, email, security, and recovery are priced separately or bundled with Plans 8–15, exactly as outlined in the blueprint.</p></div>
+            <div className="rate-grid">
+              <div className="rate-card"><div className="rate-card-head"><span>DOMAINS / ANNUAL</span><strong>01</strong></div>{domainRates.map(([name, market, price, feature]) => <div className="rate-row" key={name}><div><b>{name}</b><small>{market}</small></div><strong>{price}</strong><em>{feature}</em></div>)}</div>
+              <div className="rate-card"><div className="rate-card-head"><span>CLOUD HOSTING / ANNUAL</span><strong>02</strong></div>{hostingRates.map(([name, specs, price, ideal]) => <div className="rate-row" key={name}><div><b>{name}</b><small>{specs}</small></div><strong>{price}</strong><em>{ideal}</em></div>)}</div>
+              <div className="rate-card"><div className="rate-card-head"><span>SECURITY ADD-ONS / ANNUAL</span><strong>03</strong></div>{securityRates.map(([name, specs, price]) => <div className="rate-row" key={name}><div><b>{name}</b><small>{specs}</small></div><strong>{price}</strong></div>)}</div>
+            </div>
+            <p className="infrastructure-note"><ShieldCheck size={14} /> Plan 15 includes one year of enterprise server hosting and free custom domain registration. Plans 8–15 may bundle hosting and domain costs; confirm the final scope in the proposal.</p>
           </div>
         </section>
 
         <section className="section plans-section" id="plans" aria-labelledby="plans-heading">
           <div className="container-x">
-            <div className="section-head"><div><span className="eyebrow">PARTNERSHIP PLANS / 04</span><h2 id="plans-heading" className="section-title">Choose your<br /><span className="gold-text">starting altitude.</span></h2></div><p className="section-note">Every plan begins with a 50% advance. The balance is due after kickoff — when the first signal is clear.</p></div>
+            <div className="section-head"><div><span className="eyebrow">OFFICIAL 15-TIER MATRIX / 06</span><h2 id="plans-heading" className="section-title">Choose the<br /><span className="gold-text">right altitude.</span></h2></div><p className="section-note">The official ARB Global structure runs from ₹20,000 to ₹6,00,000. A hard 50% advance starts every project; the remaining 50% is due at UAT before final deployment.</p></div>
             <div className="plan-grid">{plans.map((plan) => <article className={`plan-card${plan.featured ? ' featured' : ''}`} key={plan.id} data-testid={`card-plan-${plan.id}`}><span className="plan-code">ARB / {plan.id}</span>{plan.featured && <span className="plan-ribbon">Most selected</span>}<h3>{plan.name}</h3><p>{plan.description}</p><div className="plan-price">{formatINR(plan.price)} <span>approx. {formatUSD(plan.price)}</span></div><button className="plan-cta" onClick={() => openPlan(plan)} data-testid={`button-book-plan-${plan.id}`}>Book with 50% Advance <ChevronRight size={14} /></button></article>)}</div>
-            <div className="pricing-foot"><span><ShieldCheck size={13} style={{ verticalAlign: 'middle', marginRight: 6, color: '#00f2fe' }} /> Transparent scope. Human support. No hidden line items.</span><strong>15 ways to start moving.</strong></div>
+            <div className="pricing-foot"><span><ShieldCheck size={13} style={{ verticalAlign: 'middle', marginRight: 6, color: '#00f2fe' }} /> Hosting and domain are billed annually or bundled from Plans 8–15.</span><strong>15 official ways to start.</strong></div>
           </div>
         </section>
 
         <section className="section trust-section" aria-labelledby="trust-heading">
           <div className="container-x">
-            <div className="section-head"><div><span className="eyebrow">TRUSTED IN MOTION / 05</span><h2 id="trust-heading" className="section-title">Built for people<br />who <span className="gradient-text">mean it.</span></h2></div><p className="section-note">Ambition deserves a technology partner with the range to see the whole board and the discipline to make the next move.</p></div>
-            <div className="logo-rail" aria-label="Client sectors"><span>FINTECH</span><span>HEALTH</span><span>LOGISTICS</span><span>RETAIL</span><span>INDUSTRIAL</span></div>
-            <div className="quote-grid"><div className="quote-card"><span className="quote-mark">“</span><blockquote>ARB gave us the confidence to stop talking about transformation and start operating differently.</blockquote><cite>— COO, GLOBAL OPERATIONS GROUP</cite></div><div className="response-card"><div><span className="eyebrow">WHEN IT MATTERS</span><strong>60 sec</strong><span>team response promise</span></div><p>Tell us what is slowing you down. We will call, listen, and map a credible first move.</p></div></div>
+            <div className="section-head"><div><span className="eyebrow">THE ARB GLOBAL ECOSYSTEM / 07</span><h2 id="trust-heading" className="section-title">Global by design.<br /><span className="gradient-text">Human by default.</span></h2></div><p className="section-note">Founded by Abodh Raj Bhar, ARB Global AI &amp; IT Services is built to help international teams move from a hard problem to a credible next step.</p></div>
+            <div className="logo-rail" aria-label="Client sectors"><span>FINTECH</span><span>HEALTHTECH</span><span>E-COMMERCE</span><span>LOGISTICS</span><span>SAAS</span></div>
+            <div className="quote-grid"><div className="quote-card"><span className="quote-mark">“</span><blockquote>Next-gen AI solutions and enterprise IT engineering for global business scale.</blockquote><cite>— ARB GLOBAL AI &amp; IT SERVICES / ABODH RAJ BHAR</cite><div className="social-rail"><a href="https://instagram.com/arb_global_ai_it_services" target="_blank" rel="noreferrer">Instagram</a><a href="https://t.me/arbglobalaiitservices" target="_blank" rel="noreferrer">Telegram</a><a href="https://youtube.com/@arb_global_ai_it_services" target="_blank" rel="noreferrer">YouTube</a><a href="https://facebook.com/share/1HJMdQw8su/" target="_blank" rel="noreferrer">Facebook</a></div></div><div className="response-card"><div><span className="eyebrow">DIRECT SUPPORT</span><strong>24/7</strong><span>global AI + IT support architecture</span></div><p>Message the team on WhatsApp at +91 8127968129 or email arbglobalitservices@gmail.com for a discovery conversation.</p></div></div>
           </div>
         </section>
       </main>
       <footer className="footer" id="contact">
         <div className="container-x">
-          <div className="footer-main"><div className="footer-copy"><span className="eyebrow">THE NEXT SIGNAL</span><h2>Ready when<br /><span className="gold-text">you are.</span></h2><p>Bring us the hard problem, the ambitious deadline, or the system you know should work better.</p></div><div className="footer-contact"><a className="contact-item" href="https://wa.me/918127968129" target="_blank" rel="noreferrer" data-testid="link-footer-whatsapp"><MessageCircle size={16} /> WhatsApp support</a><a className="contact-item" href="tel:+918127968129" data-testid="link-footer-phone"><Phone size={16} /> +91 8127968129</a><a className="contact-item" href="mailto:hello@arbglobal.ai" data-testid="link-footer-email"><Mail size={16} /> hello@arbglobal.ai</a><span className="contact-item"><Sparkles size={16} /> Team will call in 60 sec</span></div></div>
-          <div className="footer-bottom"><span>© 2025 ARB GLOBAL AI &amp; IT SERVICES</span><span>AI / CLOUD / INTELLIGENT SYSTEMS</span></div>
+          <div className="footer-main"><div className="footer-copy"><span className="eyebrow">THE NEXT SIGNAL</span><h2>Ready when<br /><span className="gold-text">you are.</span></h2><p>Bring us the hard problem, the ambitious deadline, or the system you know should work better. ARB Global will map the right plan, stack, and next move.</p></div><div className="footer-contact"><a className="contact-item" href="https://wa.me/918127968129" target="_blank" rel="noreferrer" data-testid="link-footer-whatsapp"><MessageCircle size={16} /> WhatsApp support</a><a className="contact-item" href="tel:+918127968129" data-testid="link-footer-phone"><Phone size={16} /> +91 8127968129</a><a className="contact-item" href="mailto:arbglobalitservices@gmail.com" data-testid="link-footer-email"><Mail size={16} /> arbglobalitservices@gmail.com</a><span className="contact-item"><Sparkles size={16} /> Team will call in 60 sec</span></div></div>
+          <div className="footer-bottom"><span>© 2026 ARB GLOBAL AI &amp; IT SERVICES</span><span>AI / CLOUD / AUTONOMOUS SYSTEMS / GLOBAL DELIVERY</span></div>
         </div>
       </footer>
       {selectedPlan && <PaymentModal plan={selectedPlan} onClose={closeModal} />}
