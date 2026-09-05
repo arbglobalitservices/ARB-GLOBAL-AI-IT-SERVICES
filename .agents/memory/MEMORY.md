@@ -1,0 +1,1 @@
+- [Preview WebGL fallback](preview-webgl.md) — The hosted preview may lack WebGL; Three.js scenes need a capability check and graceful fallback.

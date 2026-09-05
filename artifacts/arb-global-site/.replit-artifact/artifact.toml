@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "ARB Global AI & IT Services"
+description = "A premium dark landing page for ARB Global AI & IT Services with an interactive globe, service offerings, pricing plans, and a Cashfree/ACH booking flow."
+version = "1.0.0"
+id = "artifacts/arb-global-site"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25996
+
+[services.development]
+run = "pnpm --filter @workspace/arb-global-site run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/arb-global-site", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/arb-global-site/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25996"
+BASE_PATH = "/"
